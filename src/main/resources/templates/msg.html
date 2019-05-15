@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- 1.命名空间 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<h1>用户信息:[[${session.USERS.userName}]]</h1>
+	<h1 th:text="|获得请求参数:${param.p}|"></h1>
+	<table border="1" width="500">
+		<thead>
+			<tr style="background-color: #EFEFEF">
+				<th>序号</th>
+				<th>消息主题</th>
+				<th>发布者</th>
+				<th>发布时间</th>
+				<th>状态</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody th:remove="${PAGE_INFO.list.size()==0?'none':'all-but-first'}">
+			<!-- 动态样式操作 -->
+			<tr th:style="${iterState.even?'background:#EFEFEF':'background:white'}" th:each="temp,iterState:${PAGE_INFO.list}">
+				<td>[[${iterState.count}]]</td>
+				<!-- |信息....|:连接符号 
+				     ?: 默认值 
+				-->
+				<td th:text="${temp.mtitle?:'没有数据'}">静态系统消息1</td>
+				<td th:text="${temp.muser}">test</td>
+				<td th:text="${#dates.format(temp.mdate,'yyyy-MM-dd')}">2000-12-13</td>
+				<td>
+					<!-- 条件 -->
+					<!-- <div th:switch="${temp.mstate}">
+						<span th:case="0" style="color:blue;">未读</span>
+						<span th:case="1" style="color:red;">已读</span>
+						<span th:case="*" style="color:yellow;">未知状态</span>
+					</div> -->
+					<span th:if="${temp.mstate==0}" style="color:blue;">未读</span>
+					<span th:unless="${temp.mstate==0}" style="color:red;">已读</span>
+				</td>
+				<!-- 动态url:th:href="@{/c/removeInfo(id=${temp.mid},name=admin)}"  -->
+				<!-- 动态事件绑定 -->
+				<td><a th:onclick="|fnRemoveById(${temp.mid})|" href="javascript:void(0)">移除</a></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>静态系统消息1</td>
+				<td>test</td>
+				<td>2000-12-13</td>
+				<td>未读</td>
+				<td><a href="javascript:void(0)">移除</a></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>静态系统消息2</td>
+				<td>admin</td>
+				<td>2010-10-13</td>
+				<td>已读</td>
+				<td><a href="javascript:void(0)">移除</a></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>静态系统消息3</td>
+				<td>sa</td>
+				<td>1990-12-13</td>
+				<td>未读</td>
+				<td><a href="javascript:void(0)">移除</a></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>静态系统消息4</td>
+				<td>system</td>
+				<td>1991-11-11</td>
+				<td>未读</td>
+				<td><a href="javascript:void(0)">移除</a></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+</body>
+<!-- 引用工程绝对路径的写法@{/.../...} -->
+<script type="text/javascript" th:src="@{/js/jquery-1.12.4.js}"></script>
+<script type="text/javascript" th:inline="javascript">
+	var size=[[${PAGE_INFO.list.size()}]];
+	//alert(size);
+	function fnRemoveById(id) {
+		alert('移除【' + id + '】选项');
+	}
+</script>
+
+</html>
