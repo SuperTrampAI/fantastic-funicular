@@ -17,6 +17,11 @@ public class UserOutputDto implements Serializable {
     @ApiModelProperty(value = "name")
     private String name;
 
+    public UserOutputDto() {
+        this.id = 1;
+        this.name = "name";
+    }
+
     public Integer getId() {
         return id;
     }

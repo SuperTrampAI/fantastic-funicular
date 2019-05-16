@@ -3,9 +3,7 @@ package com.github.supertrampai.fantasticfunicular;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
+import org.springframework.web.context.request.async.DeferredResult;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -24,6 +22,28 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
 
     @Bean
+    public Docket ProductApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .genericModelSubstitutes(DeferredResult.class)
+                .useDefaultResponseMessages(false)
+                .forCodeGeneration(false)
+                .pathMapping("/")
+                .select()
+                .build()
+                .apiInfo(productApiInfo());
+    }
+
+    private ApiInfo productApiInfo() {
+        ApiInfo apiInfo = new ApiInfo("fantasticfunicular 数据接口文档",
+                "Thinking , Doing , Being",
+                "1.0.0",
+                "API TERMS URL",
+                "lxh800109@gmail.com",
+                "license",
+                "https://supertrampai.github.io/");
+        return apiInfo;
+    }
+    /*@Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
@@ -39,5 +59,5 @@ public class SwaggerConfig {
                 .termsOfServiceUrl("https://supertrampai.github.io/")
                 .version("1.0")
                 .build();
-    }
+    }*/
 }

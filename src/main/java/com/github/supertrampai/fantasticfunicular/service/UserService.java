@@ -27,9 +27,9 @@ public class UserService {
     public void demo(Object...obj){
 
     }*/
-
-    public PageOut<UserOutputDto> list(UserInputDto dto) {
-        PageInfo<UserOutputDto> page = PageHelper.startPage(dto.getPageNum(), dto.getPageSize())
+    //UserInputDto dto  dto.getPageNum(), dto.getPageSize()
+    public PageOut<UserOutputDto> list() {
+        PageInfo<UserOutputDto> page = PageHelper.startPage(1,10)
                 .doSelectPageInfo(() -> userMapper.list());
         return new PageOut<>(page);
     }

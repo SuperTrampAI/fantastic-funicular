@@ -21,6 +21,14 @@ public class User {
     private Integer usertype;
 
 
+    public User(String name, String password, Integer age, Integer sex, String nickname, Integer usertype) {
+        this.name = name;
+        this.password = password;
+        this.age = age;
+        this.sex = sex;
+        this.nickname = nickname;
+        this.usertype = usertype;
+    }
 
     public Integer getId() {
         return id;
