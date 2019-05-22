@@ -1,15 +1,20 @@
 package com.github.supertrampai.fantasticfunicular.domain;
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
 
 @Data
 @Entity
+@DynamicInsert
 @DynamicUpdate
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -19,7 +24,9 @@ public class User {
     private Integer sex;
     private String nickname;
     private Integer usertype;
-
+    private Integer status;
+    private Date  createdt;
+    private Date updatedt;
 
     public User(String name, String password, Integer age, Integer sex, String nickname, Integer usertype) {
         this.name = name;
@@ -29,60 +36,10 @@ public class User {
         this.nickname = nickname;
         this.usertype = usertype;
     }
+    public User(){}
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public User(String name, Integer age) {
         this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
         this.age = age;
-    }
-
-    public Integer getSex() {
-        return sex;
-    }
-
-    public void setSex(Integer sex) {
-        this.sex = sex;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public Integer getUsertype() {
-        return usertype;
-    }
-
-    public void setUsertype(Integer usertype) {
-        this.usertype = usertype;
     }
 }

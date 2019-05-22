@@ -1,6 +1,5 @@
 package com.github.supertrampai.fantasticfunicular.dto;
 
-
 import com.github.supertrampai.fantasticfunicular.valid.First;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,21 +24,11 @@ public class UserInputDto implements Serializable {
     @ApiModelProperty(value = "name")
     private String name;
 
-    public int getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(int pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public int getPageNum() {
-        return pageNum;
-    }
-
-    public void setPageNum(int pageNum) {
-        this.pageNum = pageNum;
-    }
-
+    private String password;
+    private Integer age;
+    private Integer sex;
+    private String nickname;
+    private Integer usertype;
+    private Integer status;
 
 }

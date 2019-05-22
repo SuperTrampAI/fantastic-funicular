@@ -1,5 +1,7 @@
+/*
 package com.github.supertrampai.fantasticfunicular.utils;
 
+import org.apache.catalina.security.SecurityUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,3 +38,4 @@ public class TokenUtil {
     }
 
 }
+*/
