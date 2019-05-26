@@ -87,10 +87,6 @@
             <artifactId>guava</artifactId>
             <version>27.1-jre</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>
 
         <!-- Excel 导入 -->
         <dependency>

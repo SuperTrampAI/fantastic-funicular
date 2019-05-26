@@ -1,5 +1,6 @@
-package com.github.supertrampai.fantasticfunicular.think;
+package com.github.supertrampai.fantasticfunicular.think.guava;
 
+import com.google.common.base.Objects;
 import com.google.common.base.Optional;
 
 /**
@@ -38,7 +39,6 @@ public class GuavaDemo {
         // Optional解决了什么问题：强迫开发者去思考可能出现null 的情况
 
         //---------------------------------
-
     }
 
 }
