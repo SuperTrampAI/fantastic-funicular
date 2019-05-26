@@ -2,7 +2,6 @@ package com.github.supertrampai.fantasticfunicular.utils;
 
 import org.springframework.util.StringUtils;
 
-import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -188,5 +187,24 @@ public class StringUtil {
             str = str.substring(0, 9) + "…";
         }
         return str;
+    }
+    public static boolean isBlank(String str) {
+        return (str == null || str.trim().length() == 0 || str.equals("") || str.equals("null"));
+    }
+
+    /**
+     * @param str Stirng to be checked if it is empty
+     * @return Returns true if |str| is empty or null
+     */
+    public static boolean isEmpty(String str) {
+        return str == null || str.trim().isEmpty();
+    }
+
+    /**
+     * @param str String to be checked if it is not empty
+     * @return Returns true if |str| is not empty or null
+     */
+    public static boolean isNotEmpty(String str) {
+        return !isEmpty(str);
     }
 }
