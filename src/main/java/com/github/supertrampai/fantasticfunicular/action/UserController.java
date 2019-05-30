@@ -1,6 +1,7 @@
 package com.github.supertrampai.fantasticfunicular.action;
 
 import com.github.supertrampai.fantasticfunicular.domain.User;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -18,9 +19,10 @@ import java.util.*;
  * Created by fangzhipeng on 2017/4/17.
  * 官方文档：http://swagger.io/docs/specification/api-host-and-base-path/
  */
+@Api(value="/user", tags="userDemo")
 @RestController
 @RequestMapping(value = "/users")
-public class UserContrller {
+public class UserController {
 
     Map<Integer, User> users = Collections.synchronizedMap(new HashMap<Integer, User>());
 

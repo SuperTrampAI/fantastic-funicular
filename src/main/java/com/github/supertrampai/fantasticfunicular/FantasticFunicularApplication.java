@@ -1,6 +1,7 @@
 package com.github.supertrampai.fantasticfunicular;
 
 import com.github.pagehelper.PageHelper;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -17,6 +18,7 @@ import java.util.Properties;
 @ServletComponentScan
 //@EntityScan(basePackageClasses = {User.class})
 @ComponentScan(basePackages="com.github.supertrampai.fantasticfunicular.*")
+//@MapperScan("com.github.supertrampai.fantasticfunicular.repository")//另外一种方式可以在每个mapper上面加注解@Mapper
 @EnableSwagger2
 @EnableCaching
 public class FantasticFunicularApplication  extends SpringBootServletInitializer {

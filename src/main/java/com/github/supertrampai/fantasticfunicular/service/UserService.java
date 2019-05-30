@@ -7,6 +7,7 @@ import com.github.supertrampai.fantasticfunicular.domain.User;
 import com.github.supertrampai.fantasticfunicular.dto.PageOut;
 import com.github.supertrampai.fantasticfunicular.dto.UserInputDto;
 import com.github.supertrampai.fantasticfunicular.dto.UserOutputDto;
+import com.github.supertrampai.fantasticfunicular.dto.UserSerachInputDto;
 import com.github.supertrampai.fantasticfunicular.repository.UserMapper;
 import com.github.supertrampai.fantasticfunicular.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -39,9 +40,14 @@ public class UserService {
 
     }*/
     //UserInputDto dto  dto.getPageNum(), dto.getPageSize()
-    public PageOut<UserOutputDto> list(UserInputDto dto) {
+    public PageOut<UserOutputDto> list(UserSerachInputDto dto) {
         PageInfo<UserOutputDto> page = PageHelper.startPage(1,10)
                 .doSelectPageInfo(() -> userMapper.list());
+        return new PageOut<>(page);
+    }
+    public PageOut<UserOutputDto> getAll(UserSerachInputDto dto) {
+        PageInfo<UserOutputDto> page = PageHelper.startPage(1,10)
+                .doSelectPageInfo(() -> userMapper.getAll());
         return new PageOut<>(page);
     }
 
