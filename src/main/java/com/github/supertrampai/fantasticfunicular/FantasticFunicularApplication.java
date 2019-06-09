@@ -10,6 +10,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Properties;
@@ -21,6 +22,9 @@ import java.util.Properties;
 //@MapperScan("com.github.supertrampai.fantasticfunicular.repository")//另外一种方式可以在每个mapper上面加注解@Mapper
 @EnableSwagger2
 @EnableCaching
+/**
+* @EnableScheduling 开启注解
+* */
 public class FantasticFunicularApplication  extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
