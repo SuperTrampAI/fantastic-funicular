@@ -12,14 +12,14 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @program: fantastic-funicular
  * @description: TODO
  * @author: lxh800109@gmail.com
- * @create: 2019-06-09 20:34
+ * @create: 2019-06-11 00:15
  * 修改历史：
  * 时间           作者          版本        描述
  * ====================================================
  **/
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class UserDaoTest {
+public class UserServiceTest {
 
     @Autowired
     private UserService userService;
@@ -33,7 +33,7 @@ public class UserDaoTest {
         userService.saveUser(user);
     }
 
-    @Test
+ /*   @Test
     public void findUserByUserName(){
         User user= userService.findUserByUserName("小明");
         System.out.println("user is "+user);
@@ -51,6 +51,6 @@ public class UserDaoTest {
     @Test
     public void deleteUserById(){
         userService.deleteUserById(1);
-    }
+    }*/
 
 }

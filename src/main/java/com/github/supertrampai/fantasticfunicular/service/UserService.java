@@ -34,6 +34,7 @@ import java.util.List;
 
 @Slf4j
 @Service
+@Component
 public class UserService {
 
     //private static UserMapper userMapper;
@@ -42,7 +43,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
     @Autowired
-    StringRedisTemplate redisTemplate;// 在service里面调用redis
+    StringRedisTemplate redisTemplate;
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -93,6 +94,7 @@ public class UserService {
         return user;
     }
     /* ----------------------------- */
+
     /**
      * 创建对象
      * @param user
@@ -100,45 +102,4 @@ public class UserService {
     public void saveUser(User user) {
         mongoTemplate.save(user);
     }
-
-    /**
-     * 根据用户名查询对象
-     * @param userName
-     * @return
-     */
-    public User findUserByUserName(String name) {
-        Query query=new Query(Criteria.where("userName").is(name));
-        User user =  mongoTemplate.findOne(query , User.class);
-        return user;
-    }
-
-    /**
-     * 更新对象
-     * @param user
-     */
-    public long updateUser(User user) {
-        Query query=new Query(Criteria.where("id").is(user.getId()));
-        Update update= new Update().set("name", user.getName()).set("password", user.getPassword());
-        //更新查询返回结果集的第一条
-        UpdateResult result =mongoTemplate.updateFirst(query,update,User.class);
-        //更新查询返回结果集的所有
-        // mongoTemplate.updateMulti(query,update,UserEntity.class);
-        if(result!=null){
-            return result.getMatchedCount();}
-        else{
-            return 0;}
-    }
-
-    /**
-     * 删除对象
-     * @param id
-     */
-    public void deleteUserById(Long id) {
-        Query query=new Query(Criteria.where("id").is(id));
-        mongoTemplate.remove(query,User.class);
-    }
-    
-
-
-
 }
