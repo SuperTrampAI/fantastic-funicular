@@ -38,6 +38,7 @@ import java.util.List;
 public class UserService {
 
     //private static UserMapper userMapper;
+
     @Autowired
     private UserMapper userMapper;
     @Autowired

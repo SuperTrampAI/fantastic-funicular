@@ -14,6 +14,8 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Integer> {
 
     List<User> findByNameLike(String name);
+    User findById(long id);
+    Long deleteById(Long id);
     //Page<User> findByName(String name, Pageable pageable);
 
    // @Query("select u.id,u.name from user where name=?1")
