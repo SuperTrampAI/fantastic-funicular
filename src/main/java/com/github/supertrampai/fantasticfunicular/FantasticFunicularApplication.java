@@ -21,14 +21,14 @@ import java.util.Properties;
 @SpringBootApplication
 @ServletComponentScan
 //@EntityScan(basePackageClasses = {User.class})
-@ComponentScan(basePackages="com.github.supertrampai.fantasticfunicular.*")
+@ComponentScan(basePackages = "com.github.supertrampai.fantasticfunicular.*")
 //@MapperScan("com.github.supertrampai.fantasticfunicular.repository")//另外一种方式可以在每个mapper上面加注解@Mapper
 @EnableSwagger2
 @EnableCaching
 /**
-* @EnableScheduling 开启注解
-* */
-public class FantasticFunicularApplication  extends SpringBootServletInitializer {
+ * @EnableScheduling 开启注解
+ * */
+public class FantasticFunicularApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(FantasticFunicularApplication.class, args);
@@ -38,6 +38,7 @@ public class FantasticFunicularApplication  extends SpringBootServletInitializer
     public SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(FantasticFunicularApplication.class);
     }
+
     // 配置mybatis的分页插件pageHelper
     @Bean
     public PageHelper pageHelper() {
@@ -53,6 +54,7 @@ public class FantasticFunicularApplication  extends SpringBootServletInitializer
 
     /**
      * tomcatEmbedded 这段代码是为了解决，上传文件大于10M出现连接重置的问题。
+     *
      * @return
      */
     @Bean
