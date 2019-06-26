@@ -407,7 +407,7 @@ public class MailSendUtil {
         return true;
     }
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         String smtp = "10.75.210.10";
         String from = "test1@xxxxx";
         String to = "lxh800109@xxxx";
@@ -422,6 +422,6 @@ public class MailSendUtil {
         catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 }

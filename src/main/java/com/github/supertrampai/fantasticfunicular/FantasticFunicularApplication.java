@@ -58,6 +58,7 @@ public class FantasticFunicularApplication extends SpringBootServletInitializer 
      * @return
      */
     @Bean
+
     public TomcatServletWebServerFactory tomcatEmbedded() {
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
         tomcat.addConnectorCustomizers((TomcatConnectorCustomizer) connector -> {

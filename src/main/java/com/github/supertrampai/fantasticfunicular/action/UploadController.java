@@ -26,7 +26,7 @@ import java.nio.file.Paths;
 public class UploadController {
     //Save the uploaded file to this folder
 
-    private static String UPLOADED_FOLDER = "E://temp//";
+    private static String UPLOADED_FOLDER = "D://uploadfile//";
 
     @GetMapping("/uploaddemo")
     public String index() {
