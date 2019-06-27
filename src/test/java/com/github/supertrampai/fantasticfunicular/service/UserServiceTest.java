@@ -1,6 +1,5 @@
 package com.github.supertrampai.fantasticfunicular.service;
 
-import com.github.supertrampai.fantasticfunicular.domain.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +25,11 @@ public class UserServiceTest {
 
     @Test
     public void testSaveUser() throws Exception {
-        User user=new User();
+       /* User user=new User();
         user.setId(2);
         user.setName("小明");
         user.setPassword("fffooo123");
-        userService.saveUser(user);
+        userService.saveUser(user);*/
     }
 
  /*   @Test
