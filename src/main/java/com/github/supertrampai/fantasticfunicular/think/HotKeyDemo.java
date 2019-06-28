@@ -1,26 +1,34 @@
 package com.github.supertrampai.fantasticfunicular.think;
 
 /**
- * @Description
- * @auther lxh800109@gmail.com
- * @create 2019-06-27 9:52
+ * Class description
+ *
+ *
+ * @version Enter version here..., 19/06/28
+ * @author Enter your name here...
+ *
  */
 public class HotKeyDemo {
-
     public static void main(String[] args) {
         for (int i = 0; i <= 10; i++) {
             System.out.println("i:" + i);
         }
+
         testDemo();
     }
 
-    public static void testDemo() {
+    private static void testDemo() {
         for (int j = 0; j <= 10; j++) {
-            System.out.println("j:" + j);
+            System.out.println("中文-j:" + j);
         }
+
+        System.out.println("!!!!!!!");
+        System.out.println("!!!!!!!!!!!!!!!");
+
+        int it = 1;
+
 
 
     }
-
-
 }
+
