@@ -1,11 +1,16 @@
+
+/*
+ * Copyright (c) 2017- 2019 SuperTrampAI.github All Rights Reserved.
+ */
+
 package com.github.supertrampai.fantasticfunicular.think;
 
 /**
  * Class description
  *
  *
- * @version Enter version here..., 19/06/28
- * @author Enter your name here...
+ * @version        Enter version here..., 19/06/28
+ * @author         lxh800109@gmail.com
  *
  */
 public class HotKeyDemo {
@@ -26,9 +31,8 @@ public class HotKeyDemo {
         System.out.println("!!!!!!!!!!!!!!!");
 
         int it = 1;
-
-
-
     }
 }
 
+
+//~ Formatted by Jindent --- http://www.jindent.com
