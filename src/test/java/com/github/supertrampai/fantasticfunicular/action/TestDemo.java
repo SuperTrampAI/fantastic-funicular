@@ -1,8 +1,6 @@
 package com.github.supertrampai.fantasticfunicular.action;
 
-import org.junit.Before;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 /**
  * @version V1.0
@@ -17,11 +15,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 public class TestDemo {
 
     private MockMvc mvc;
-
-    @Before
-    public void setUp() throws Exception {
-        mvc = MockMvcBuilders.standaloneSetup(new UserController()).build();
-    }
 
     /*@Test
     public void getHello() throws Exception {
